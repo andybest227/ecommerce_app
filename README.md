@@ -11,7 +11,7 @@ Welcome to the E-Commerce Application Backend, a robust and scalable backend sys
 - Resilient Design: Circuit breakers and retry mechanisms with Spring Cloud Resilience4j.
 
 # 🛠️ Tech Stack
-# Core Frameworks and Tools:
+- Core Frameworks and Tools:
 1. Spring Boot (REST, Data JPA, Security, Cloud Config)
 2. Spring Cloud (Eureka, Gateway, Config Server)
 
@@ -27,30 +27,41 @@ Welcome to the E-Commerce Application Backend, a robust and scalable backend sys
 3. JUnit & Mockito: Unit and integration testing.
 
 ## 📚 Microservices Overview
-# User Service:
-
+- User Service:
 Manages user registration, login, and profile management.
 JWT-based authentication and authorization.
-Product Service:
 
+- Product Service:
 Handles product catalog, search, and filtering.
 Inventory management.
-Order Service:
 
+- Order Service:
 Processes orders and manages order status.
 Sends notifications for order updates.
-Payment Service:
 
+- Payment Service:
 Integrates with payment gateways for secure transactions.
 Handles payment confirmation and refunds.
-Notification Service:
 
+- Notification Service:
 Sends email and SMS notifications for order updates and promotional offers.
 Uses Kafka for real-time notification triggers.
-API Gateway:
 
+- API Gateway:
 Routes requests to appropriate microservices.
 Centralized authentication and request filtering.
-Config Server:
 
+- Config Server:
 Centralized configuration management for all services.
+
+# 🌐 How to Run
+Prerequisites:
+Java 17+
+Maven
+Docker & Docker Compose
+
+# 👥 Contributions
+Contributions are welcome! Feel free to fork this repository and create pull requests to improve the application.
+
+# 📧 Contact
+For inquiries or support, reach out via aondopase@gmail.com.
