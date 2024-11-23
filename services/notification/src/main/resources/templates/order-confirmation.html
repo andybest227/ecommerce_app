@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Confirmation</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+    }
+    .email-container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+        text-align: center;
+        color: #4CAF50;
+        margin-bottom: 20px;
+    }
+    .content {
+        line-height: 1.6;
+        color: #333333;
+    }
+    .content p {
+        margin: 10px 0;
+    }
+    .products-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    .products-table th, .products-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    .products-table th {
+        background-color: #f4f4f9;
+        color: #333333;
+    }
+    .footer {
+        text-align: center;
+        margin-top: 20px;
+        color: #888888;
+        font-size: 12px;
+    }
+    .button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        color: #ffffff;
+        background-color: #4CAF50;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .button:hover {
+        background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+<div class="email-container">
+  <div class="header">
+    <h1>Order Confirmation</h1>
+  </div>
+  <div class="content">
+    <p>Dear <strong th:text="${customerName}">Customer Name</strong>,</p>
+    <p>Thank you for your order! Below are the details of your purchase:</p>
+    <p><strong>Order Reference:</strong> <span th:text="${orderReference}">ORDER12345</span></p>
+    <p><strong>Total Amount:</strong> $<span th:text="${totalAmount}">100.00</span></p>
+
+    <table class="products-table">
+      <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="product : ${products}">
+        <td th:text="${product.name}">Product Name</td>
+        <td th:text="${product.quantity}">1</td>
+        <td th:text="${product.price}">$100.00</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <a href="#" class="button">View Your Order</a>
+  </div>
+  <div class="footer">
+    <p>If you have any questions, feel free to contact our support team.</p>
+    <p>&copy; 2024 E-Commerce Inc. All Rights Reserved.</p>
+  </div>
+</div>
+</body>
+</html>
